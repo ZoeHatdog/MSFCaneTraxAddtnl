@@ -1,0 +1,339 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Layout — full-height dashboard */
+.dashboard-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-neutral-bg, #f5f5f5);
+}
+
+.dashboard-header {
+  flex-shrink: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--color-neutral-border, #e5e5e5);
+  padding: 1rem 1.5rem;
+}
+
+.dashboard-header-title {
+  color: var(--color-near-black, #101c26);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+/* Group headers (theme) — primary green */
+.dashboard-group-header {
+  color: #006c45;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(14, 84, 45, 0.3);
+}
+
+.dashboard-content {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dashboard-chart-section {
+  min-height: 280px;
+  width: 100%;
+  min-width: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--color-neutral-border, #e5e5e5);
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.dashboard-controls {
+  flex-wrap: wrap;
+}
+
+.dashboard-footer {
+  flex-shrink: 0;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid var(--color-neutral-border, #e5e5e5);
+  color: var(--color-dark-slate, #26435c);
+  font-size: 0.8125rem;
+}
+
+/* Stat cards — theme colors, hover = dark green */
+.dash-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--color-neutral-border, #e5e5e5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.dash-card:hover {
+  border-color: rgba(14, 84, 45, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 108, 69, 0.12);
+}
+
+.dash-card-icon-wrap {
+  background: rgba(0, 108, 69, 0.08);
+  border: 2px solid rgba(0, 108, 69, 0.25);
+  color: #006c45;
+}
+.dash-card-value {
+  color: #006c45;
+  font-weight: 700;
+}
+
+/* Buttons: primary green, hover dark green */
+.btn-primary-theme {
+  background-color: #006c45;
+  color: #fff;
+  border: none;
+}
+.btn-primary-theme:hover {
+  background-color: #0e542d;
+}
+
+/* Links: link green */
+.link-theme {
+  color: #008758;
+}
+.link-theme:hover {
+  color: #0e542d;
+}
+
+/* Active / selected: accent orange */
+.active-accent {
+  color: #f99d1c;
+}
+.hover-accent:hover {
+  color: #f99d1c;
+  background-color: rgba(249, 157, 28, 0.1);
+}
+
+/* Cancel: warning orange on hover */
+.btn-cancel-theme:hover {
+  background-color: #f65b15;
+  color: #fff;
+}
+
+/* Bin numbers / emphasis — primary green */
+.text-bin-value {
+  color: #006c45;
+}
+
+/* Material icon size in cards */
+.dash-card .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: #006c45;
+}
+
+/* Harvester table — theme-aligned, scrollable */
+.harvester-table-wrap {
+  width: 100%;
+  min-width: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--color-neutral-border, #e5e5e5);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.harvester-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.harvester-table thead {
+  background: #006c45;
+  color: #fff;
+}
+
+.harvester-table thead th {
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  border-bottom: 2px solid #0e542d;
+}
+
+.harvester-table thead th:first-child {
+  width: 2.5rem;
+  text-align: center;
+}
+
+.harvester-table tbody tr {
+  border-bottom: 1px solid var(--color-neutral-border, #e5e5e5);
+  transition: background-color 0.15s ease;
+}
+
+.harvester-table tbody tr:hover {
+  background-color: rgba(0, 108, 69, 0.06);
+}
+
+.harvester-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.harvester-table tbody td,
+.harvester-table tbody th {
+  padding: 0.625rem 1rem;
+  color: var(--color-near-black, #101c26);
+}
+
+.harvester-table tbody th {
+  font-weight: 600;
+  color: var(--color-dark-slate, #26435c);
+  text-align: center;
+  width: 2.5rem;
+}
+
+.harvester-table .col-number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.harvester-table .col-datetime {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-dark-slate, #26435c);
+}
+
+.harvester-table .text-value {
+  color: #006c45;
+  font-weight: 600;
+}
+
+/* Add Harvest Group modal — form layout & UX */
+.add-form-modal {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.add-form-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-neutral-border, #e5e5e5);
+  background: linear-gradient(to bottom, rgba(0, 108, 69, 0.04), transparent);
+}
+
+.add-form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-near-black, #101c26);
+  margin: 0 0 0.25rem 0;
+}
+
+.add-form-description {
+  font-size: 0.8125rem;
+  color: var(--color-dark-slate, #26435c);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.add-form-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.add-form-section {
+  margin-bottom: 1.25rem;
+}
+
+.add-form-section:last-child {
+  margin-bottom: 0;
+}
+
+.add-form-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #006c45;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(0, 108, 69, 0.2);
+}
+
+.add-form-field {
+  margin-bottom: 0.875rem;
+}
+
+.add-form-field:last-child {
+  margin-bottom: 0;
+}
+
+.add-form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-near-black, #101c26);
+  margin-bottom: 0.35rem;
+}
+
+.add-form-grid {
+  display: grid;
+  gap: 0.875rem 1rem;
+}
+
+.add-form-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.add-form-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 640px) {
+  .add-form-grid-2,
+  .add-form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-form-select-trigger {
+  font-size: 0.875rem;
+  text-align: left;
+  border: 1px solid var(--color-neutral-border, #e5e5e5);
+  background: var(--color-neutral-bg, #f5f5f5);
+  min-height: 2.25rem;
+}
+
+.add-form-select-trigger:hover {
+  border-color: rgba(0, 108, 69, 0.4);
+  background: #fff;
+}
+
+.add-form-select-chevron {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.add-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-neutral-border, #e5e5e5);
+  background: var(--color-neutral-bg, #f8f8f8);
+}
+
+.add-form-actions .btn-primary {
+  background-color: #006c45;
+  color: #fff;
+  border: none;
+}
+
+.add-form-actions .btn-primary:hover {
+  background-color: #0e542d;
+}
