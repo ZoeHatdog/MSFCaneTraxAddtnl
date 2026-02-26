@@ -9,6 +9,9 @@ import AvgMillThr from './cards/AvgMillThr';
 import HarvesterTable from './tables/HarvesterTable';
 import Chart2 from './charts/chart-2';
 import Chart3 from './charts/chart-3';
+import Chart4 from './charts/chart-4';
+
+
 function Dashboard() {
   const [testmessage, setTestmessage] = useState('');
 
@@ -34,7 +37,7 @@ function Dashboard() {
       </header>
 
       <main className="dashboard-content">
-        <p className="dashboard-group-header">Bins crushed (last 7 days)</p>
+        <p className="dashboard-group-header">Overall Bin Rate</p>
         <section className="dashboard-chart-section flex flex-col items-center gap-6">
           <div className="w-full max-w-3xl">
             <Chart1 />
@@ -53,6 +56,11 @@ function Dashboard() {
           
             <Chart3 />
         
+        </section>
+
+        <p className="dashboard-group-header pt-5 w-full">Tonnes per Harvester Group</p>
+        <section className="dashboard-chart-section flex flex-col items-center gap-6">
+            <Chart4 />
         </section>
 
         <p className="dashboard-group-header pt-5 w-full">Harvester Group Pad and Target Bin Rates</p>

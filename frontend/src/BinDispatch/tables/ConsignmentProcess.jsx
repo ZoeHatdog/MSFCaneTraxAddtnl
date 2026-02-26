@@ -3,11 +3,11 @@ import '../../dashboard/styles/dashstyle.css';
 import { useState, useRef } from 'react';
 
 const DummyConsignment = [
-  { ConsignmentNo: "01", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 01", LastUpdated: "2025-12-13 04:53:02", SetBy: "John Doe" },
-  { ConsignmentNo: "02", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 02", LastUpdated: "2025-12-13 03:41:02", SetBy: "Isaac Newton" },
-  { ConsignmentNo: "03", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 03", LastUpdated: "2025-12-13 02:42:02", SetBy: "Kobe Bryant" },
-  { ConsignmentNo: "04", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 04", LastUpdated: "2025-12-13 07:44:02", SetBy: "Charles Babbage" },
-  { ConsignmentNo: "05", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 05", LastUpdated: "2025-12-13 10:42:02", SetBy: "Lorem Ipsum" },
+  { ConsignmentNo: "01", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 01", LastUpdated: "2025-12-13 04:53:02", SetBy: "John Doe", TruckNo: "Truck 01" },
+  { ConsignmentNo: "02", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 02", LastUpdated: "2025-12-13 03:41:02", SetBy: "Isaac Newton", TruckNo: "Truck 02"},
+  { ConsignmentNo: "03", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 03", LastUpdated: "2025-12-13 02:42:02", SetBy: "Kobe Bryant", TruckNo: "Truck 03"},
+  { ConsignmentNo: "04", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 04", LastUpdated: "2025-12-13 07:44:02", SetBy: "Charles Babbage", TruckNo: "Truck 04" },
+  { ConsignmentNo: "05", ConsignmentStatus: "In Progress", AssignedToBin: "Bin 05", LastUpdated: "2025-12-13 10:42:02", SetBy: "Lorem Ipsum", TruckNo: "Truck 05"},
 ];
 
 function ConsignmentProcess() {
@@ -31,6 +31,7 @@ function ConsignmentProcess() {
           <h3 className="font-bold text-lg">Consignment {selectedRow?.ConsignmentNo}</h3>
           <p className="py-2">Consignment Status: {selectedRow?.ConsignmentStatus}</p>
           <p className="py-2">Assigned to Bin: {selectedRow?.AssignedToBin}</p>
+          <p className="py-2">Truck Number: {selectedRow?.TruckNo}</p>
           <p className="py-2">Last Updated: {selectedRow?.LastUpdated}</p>
           <p className="py-2">Set By: {selectedRow?.SetBy}</p>
           <div className="modal-action"></div>
@@ -43,6 +44,7 @@ function ConsignmentProcess() {
             <th>Consignment No.</th>
             <th>Consignment Status</th>
             <th>Assigned to Bin</th>
+            <th>Truck Number</th>
             <th>Last Updated</th>
             <th>Set By</th>
           </tr>
@@ -53,6 +55,7 @@ function ConsignmentProcess() {
               <td className="text-value">{row.ConsignmentNo}</td>
               <td>{row.ConsignmentStatus}</td>
               <td>{row.AssignedToBin}</td>
+              <td>{row.TruckNo}</td>
               <td className="col-datetime">{row.LastUpdated}</td>
               <td>{row.SetBy}</td>
             </tr>

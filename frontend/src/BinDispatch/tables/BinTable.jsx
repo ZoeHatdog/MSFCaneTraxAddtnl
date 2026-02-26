@@ -11,16 +11,26 @@ const DummyBins = [
 ];
 
 function BinTable() {
+  const [selectedPadNo, setSelectedPadNo] = useState(null);
+  const dropdownDetailsRef = useRef(null);
+  const viewModalDropdownRef = useRef(null);
+
+  const handleSelectPadNo = (value) => {
+    setSelectedPadNo(value);
+    viewModalDropdownRef.current?.removeAttribute("open");
+  };
+
   const modal = useRef(null);
   const [selectedRow, setSelectedRow] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const addModal = useRef(null);
 
   const [selectedBinNo, setSelectedBinNo] = useState(null);
-  const dropdownDetailsRef = useRef(null);
+  
 
   const handleRowClick = (row) => {
     setSelectedRow(row);
+    setSelectedPadNo(null);
     modal.current.showModal();
   };
 
@@ -111,18 +121,74 @@ function BinTable() {
 
       {/* ========================================== VIEW/UPDATE MODAL ========================================== */}
       <dialog ref={modal} id="bin_view_modal" className="modal">
-        <div className="modal-box">
-          <form method="dialog">
+        <div className="modal-box view-modal-box max-w-lg p-0 overflow-y-auto">
+          <form method="dialog" className="p-0">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
-          <h3 className="font-bold text-lg">Bin {selectedRow?.BinNo}</h3>
-          <p className="py-2">Bin Status: {selectedRow?.BinStatus}</p>
-          <p className="py-2">Last Seen: {selectedRow?.LastSeen}</p>
-          <p className="py-2">Previous Truck: {selectedRow?.PreviousTruck}</p>
-          <p className="py-2">Bin Type: {selectedRow?.TRUCKNUMBER}</p>
-          <p className="py-2">Driver Name: {selectedRow?.DriverName}</p>
-          <p className="py-2">Last Updated by: {selectedRow?.["Last Updated by:"]}</p>
-          <div className="modal-action"></div>
+
+          <div className="view-modal-header">
+            <h3 className="view-modal-title">Bin {selectedRow?.BinNo}</h3>
+            <p className="view-modal-subtitle">View details and send to pad</p>
+          </div>
+
+          <div className="view-modal-body">
+            <section className="add-form-section">
+              <h4 className="add-form-section-title">Status &amp; info</h4>
+              <div className="view-modal-grid">
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Bin Status</span>
+                  <span className="view-modal-value">{selectedRow?.BinStatus}</span>
+                </div>
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Last Seen</span>
+                  <span className="view-modal-value view-modal-datetime">{selectedRow?.LastSeen}</span>
+                </div>
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Previous Truck</span>
+                  <span className="view-modal-value">{selectedRow?.PreviousTruck}</span>
+                </div>
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Truck Number</span>
+                  <span className="view-modal-value">{selectedRow?.TRUCKNUMBER}</span>
+                </div>
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Driver Name</span>
+                  <span className="view-modal-value">{selectedRow?.DriverName}</span>
+                </div>
+                <div className="view-modal-field">
+                  <span className="view-modal-label">Last Updated by</span>
+                  <span className="view-modal-value">{selectedRow?.["Last Updated by:"]}</span>
+                </div>
+              </div>
+            </section>
+
+            <section className="add-form-section">
+              <h4 className="add-form-section-title">Send to Pad</h4>
+              <div className="add-form-field">
+                <details ref={viewModalDropdownRef} className="dropdown dropdown-end w-full">
+                  <summary className="add-form-select-trigger btn w-full justify-between">
+                    <span className={selectedPadNo ? "text-base-content" : "text-base-content/60"}>{selectedPadNo != null ? `Pad ${selectedPadNo}` : "Select pad"}</span>
+                    <span className="add-form-select-chevron">▼</span>
+                  </summary>
+                  <ul className="menu dropdown-content bg-base-100 rounded-box z-[100] w-full min-w-[var(--radix-popper-anchor-width)] p-2 shadow-lg border border-base-300 mt-1">
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <li key={n}>
+                        <a onClick={() => handleSelectPadNo(String(n))}>Pad {n}</a>
+                      </li>
+                    ))}
+                    <li className="border-t border-base-300 mt-1 pt-1">
+                      <a onClick={() => handleSelectPadNo(null)} className="text-base-content/70">Clear selection</a>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+          </div>
+
+          <div className="view-modal-actions">
+            <button type="button" className="btn btn-ghost" onClick={() => modal.current?.close()}>Close</button>
+            <button type="button" className="btn btn-primary">Update</button>
+          </div>
         </div>
       </dialog>
 

@@ -5,7 +5,7 @@ import './App.css'
 import { useNavigate, Routes, Route } from 'react-router-dom'
 import Dashboard from './dashboard/dashboard'
 import BinDispatch from './BinDispatch/BinDispatch'
-
+import Consignment from './ConsignmentsScreen/Consignment'
 function MyButton() {
   const navigate = useNavigate();
   return (
@@ -20,6 +20,15 @@ function BinDispatchButton() {
   return (
     <button className="bg-blue-500 text-white p-2 rounded-md" onClick={() => navigate('/bin-dispatch')}>
       Go to Bin Dispatch
+    </button>
+  );
+}
+
+function ConsignmentButton() {
+  const navigate = useNavigate();
+  return (
+    <button className="bg-blue-500 text-white p-2 rounded-md" onClick={() => navigate('/consignment')}>
+      Go to Consignment
     </button>
   );
 }
@@ -41,7 +50,8 @@ function App(props) {
         <div className="flex flex-col items-center justify-center gap-4">
           <MyButton />
           <BinDispatchButton />
-        </div>
+          <ConsignmentButton />
+          </div>
    
         <h1 className="text-xl font-bold underline">
           This is test for tailwindcss
@@ -73,6 +83,7 @@ function App(props) {
       <Route path="/" element={homePage} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/bin-dispatch" element={<BinDispatch />} />
+      <Route path="/consignment" element={<Consignment />} />
     </Routes>
   )
 }

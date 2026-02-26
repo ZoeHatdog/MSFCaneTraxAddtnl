@@ -337,3 +337,106 @@
 .add-form-actions .btn-primary:hover {
   background-color: #0e542d;
 }
+
+/* View modal — Bin details & Send to Pad */
+.view-modal-box {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-modal-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-neutral-border, #e5e5e5);
+  background: linear-gradient(to bottom, rgba(0, 108, 69, 0.04), transparent);
+}
+
+.view-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-near-black, #101c26);
+  margin: 0 0 0.25rem 0;
+}
+
+.view-modal-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-dark-slate, #26435c);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.view-modal-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.view-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .view-modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.view-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.view-modal-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-dark-slate, #26435c);
+}
+
+.view-modal-value {
+  font-size: 0.875rem;
+  color: var(--color-near-black, #101c26);
+  font-weight: 500;
+}
+
+.view-modal-datetime {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-dark-slate, #26435c);
+}
+
+.view-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-neutral-border, #e5e5e5);
+  background: var(--color-neutral-bg, #f8f8f8);
+}
+
+.view-modal-actions .btn-primary {
+  background-color: #006c45;
+  color: #fff;
+  border: none;
+}
+
+.view-modal-actions .btn-primary:hover {
+  background-color: #0e542d;
+}
+
+/* List rows (e.g. Trucks en route) */
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-neutral-border, #e5e5e5);
+}
+.list-row:last-child {
+  border-bottom: none;
+}
+.list-col-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}

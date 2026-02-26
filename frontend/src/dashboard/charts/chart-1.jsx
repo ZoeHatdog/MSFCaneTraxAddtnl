@@ -12,43 +12,43 @@ const CHART_COLORS = {
 // #region Sample data
 const data = [
   {
-    name: 'Day 1',
-    uv: 40,
-    pv: 24,
-    amt: 24,
+    name: 'Today',
+    uv:30,
+    pv: 54,
+    amt: 45,
   },
   {
-    name: 'Day 2',
+    name: 'Day 1',
     uv: 30,
     pv: 13,
     amt: 22,
   },
   {
-    name: 'Day 3',
+    name: 'Day 2',
     uv: 20,
-    pv: 98,
+    pv: 25,
     amt: 22,
   },
   {
-    name: 'Day 4',
+    name: 'Day 3',
     uv: 27,
     pv: 39,
     amt: 20,
   },
   {
-    name: 'Day 5',
+    name: 'Day 4',
     uv: 18,
     pv: 48,
     amt: 21,
   },
   {
-    name: 'Day 6',
+    name: 'Day 5',
     uv: 23,
     pv: 38,
     amt: 25,
   },
   {
-    name: 'Day 7',
+    name: 'Day 6',
     uv: 34,
     pv: 43,
     amt: 21,
@@ -79,7 +79,7 @@ export default function Chart1() {
           <Line
             type="monotone"
             dataKey="pv"
-            name="Expected # Bins"
+            name="Avg Overall Bin Rate HG"
             stroke={CHART_COLORS.blue}
             strokeWidth={2}
             dot={{ fill: CHART_COLORS.blue, r: 4 }}
@@ -88,7 +88,7 @@ export default function Chart1() {
           <Line
             type="monotone"
             dataKey="uv"
-            name="Actual # Bins"
+            name="AVG Overall Bin Rate QUBE"
             stroke={CHART_COLORS.primary}
             strokeWidth={2}
             dot={{ fill: CHART_COLORS.primary, r: 4 }}
