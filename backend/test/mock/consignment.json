@@ -1,0 +1,109 @@
+[
+    {
+        "consignmentId": 54,
+        "consignmentNo": "ABCDxx",
+        "harvesterGroupId": 40,
+        "harvesterId": null,
+        "farmId": null,
+        "sidingId": 5,
+        "blockId": null,
+        "paddockId": null,
+        "caneClassId": null,
+        "caneVarietyId": null,
+        "isBurnt": true,
+        "burntTime": "2025-09-23T07:20:00+10:00",
+        "isTrial": false,
+        "isBlockCutOut": true,
+        "dateCreated": "2025-09-23T09:20:00+10:00",
+        "dateCompleted": "2025-09-23T09:45:00+10:00",
+        "dateProcessed": null,
+        "dateModified": "2025-09-23T09:20:00+10:00",
+        "dateCancelled": null,
+        "createdBy": "r.hollingworth@iscape.com.au",
+        "modifiedBy": null,
+        "completedBy": null,
+        "cancelledBy": null,
+        "consignedBins": [
+            {
+                "binId": 139,
+                "consignedBinId": 1145,
+                "MsfBinId": 12,
+                "consignedDateTime": "2025-03-19T00:00:00+10:00",
+                "binNumber": "1",
+                "binPosition": 1
+            }
+        ]
+    },
+    {
+        "consignmentId": 55,
+        "consignmentNo": "ABCDxx",
+        "harvesterGroupId": 40,
+        "harvesterId": null,
+        "farmId": null,
+        "sidingId": 5,
+        "blockId": null,
+        "paddockId": null,
+        "caneClassId": null,
+        "caneVarietyId": null,
+        "isBurnt": true,
+        "burntTime": "2025-09-23T07:20:00+10:00",
+        "isTrial": false,
+        "isBlockCutOut": true,
+        "dateCreated": "2025-09-23T09:20:00+10:00",
+        "dateCompleted": "2025-09-23T09:45:00+10:00",
+        "dateModified": "2025-09-23T09:20:00+10:00",
+        "dateProcessed": "2025-09-23T09:20:00+10:00",
+        "dateCancelled": null,
+        "createdBy": "r.hollingworth@iscape.com.au",
+        "modifiedBy": null,
+        "completedBy": null,
+        "cancelledBy": null,
+        "consignedBins": [
+            {
+                "binId": 139,
+                "consignedBinId": 1147,
+                "MsfBinId": 20,
+                "consignedDateTime": "2025-03-19T00:00:00+10:00",
+                "binNumber": "1",
+                "binPosition": 1
+            }
+        ]
+    },
+    {
+        "consignmentId": 100,
+        "consignmentNo": "ABCDxx",
+        "harvesterGroupId": 20,
+        "harvesterId": null,
+        "farmId": null,
+        "sidingId": 10,
+        "blockId": null,
+        "paddockId": null,
+        "caneClassId": null,
+        "caneVarietyId": null,
+        "isBurnt": true,
+        "burntTime": "2025-09-23T07:20:00+10:00",
+        "isTrial": false,
+        "isBlockCutOut": true,
+        "dateCreated": "2025-09-23T09:20:00+10:00",
+        "dateCompleted": "2025-09-23T09:45:00+10:00",
+        "dateModified": "2025-09-23T09:20:00+10:00",
+        "dateProcessed": null,
+        "dateCancelled": null,
+        "createdBy": "r.hollingworth@iscape.com.au",
+        "modifiedBy": null,
+        "completedBy": null,
+        "cancelledBy": null,
+        "consignedBins": [
+            {
+                "binId": 149,
+                "consignedBinId": 150,
+                "MsfBinId": 15,
+                "consignedDateTime": "2025-03-19T00:00:00+10:00",
+                "binNumber": "1",
+                "binPosition": 1
+            }
+        ]
+    }
+
+]
+ 

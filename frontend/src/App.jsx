@@ -35,7 +35,7 @@ function ConsignmentButton() {
 
 function App(props) {
 
-  console.log(props);
+
 
   useEffect(() => {
     console.log("props changed");

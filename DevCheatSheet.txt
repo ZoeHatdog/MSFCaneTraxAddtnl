@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// For Building frontend 
+1. Create react jsx apps/webpages 
+For Building react:
+    CD to the Directory to vite/nextjs/react
+    npm run build 
+
+On the Backend Code:
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html')); // gets all the dist file on the build on frontendt
+});
